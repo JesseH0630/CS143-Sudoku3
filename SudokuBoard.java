@@ -152,6 +152,29 @@ public class SudokuBoard {
 		return true;
 	}
 
+	// Solve the board using recursive backtracking.
+	public boolean solve() {
+		if(isSolved()) {
+			return true;
+		}
+		for(int r = 0; r < board.length; r++) {
+			for(int c = 0; c < board[r].length; c++) {
+				if(board[r][c] == 0) {
+					for(int i = 1; i <= 9; i++) {
+						board[r][c] = i;
+						if(isValid() && solve()) {
+							return true;
+						}
+					}
+					if(!isValid()) {
+						board[r][c] = 0;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
 	// Print the board in a nice way.
 	public String toString() {
 		String result = "";
