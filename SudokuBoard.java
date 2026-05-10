@@ -3,10 +3,12 @@ import java.io.*;
 
 public class SudokuBoard {
 	private int[][] board;
+	private BoardGUI boardGUI;
 
 	// Constructs a new board.
 	public SudokuBoard() {
 		board = new int[9][9];
+		boardGUI = new BoardGUI(9);
 	}
 
 	// Construct the board with imported data from file.
@@ -154,6 +156,9 @@ public class SudokuBoard {
 
 	// Solve the board using recursive backtracking.
 	public boolean solve() {
+		// Update the GUI (this line may cause the board to take a long time to solve).
+		boardGUI.update(board);
+
 		if(isSolved()) {
 			return true;
 		}

@@ -35,7 +35,7 @@ Initial board
 +-------+-------+-------+
 
 
-Solving board...SOLVED in 0.396 seconds.
+Solving board...SOLVED in 77.065 seconds.
 
 +-------+-------+-------+
 | 5 3 4 | 6 7 8 | 9 1 2 |
